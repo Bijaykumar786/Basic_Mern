@@ -1,5 +1,10 @@
 const express = require('express');
+const connectToDatabase = require('./database');
 const app = express();
+
+
+
+connectToDatabase()
 
 app.get ("/", (req, res) => {
     res.json({
@@ -19,3 +24,4 @@ app.listen(3000, () => {
 })
 
 
+// mongodb+srv://bijaykumar786:<db_password>@cluster0.klv29gg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
