@@ -35,6 +35,15 @@ app.post("/blog", upload.single('image'), (req, res) => {
     })
 })
 
+app.use(express.static('./storage'))
+
+app.get("/blog", async(req,res)=>{
+    const blogs = await Blog.find()
+    res.status(200).json({
+        Message : "blog api successfully",
+        data : blogs
+    })
+})
 
 
 
